@@ -1,0 +1,15 @@
+# own rules
+header	__D7031_FROM_Tarif		From =~ /tarif/i
+body	__D7031_Versicherung		/Krankenversicherungsvertrag/i
+body	__D7031_Tarif			/Tarif/i
+body	__D7031_Krankentagegeld		/Krankentagegeld/i
+body	__D7031_Premiumleistungen	/\bPremiumleistungen\b/i
+body	__D7031_Krankenversicherung	/\bKrankenversicherung\b/i
+meta	D7031_Versicherung		((__D7031_FROM_Tarif + __D7031_Versicherung + __D7031_Tarif + __D7031_Krankentagegeld + __D7031_Premiumleistungen + __D7031_Krankenversicherung) >1)
+describe D7031_Versicherung		private health insurance
+score	D7031_Versicherung		8
+
+body	D7031_Sex			/Sex/i
+describe D7031_Sex			contains 'Sex'
+score	D7031_Sex			2
+

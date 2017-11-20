@@ -1,0 +1,6 @@
+--- 
+- name: update spamassassin private rules
+  hosts: mailserver
+  become: true
+  roles:
+    - manage-spamassassin

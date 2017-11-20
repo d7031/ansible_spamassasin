@@ -1,0 +1,7 @@
+---
+# handlers file for manage-spamassassin
+
+- name: reload spamassassin service
+  service:
+    name: spamassassin
+    state: reloaded
